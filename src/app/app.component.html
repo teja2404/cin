@@ -1,0 +1,29 @@
+<div class="layout-wrapper"
+    [ngClass]="{'menu-layout-static': !isOverlay(),
+                'menu-layout-overlay': isOverlay(),
+                'layout-menu-overlay-active': overlayMenuActive,
+                'layout-menu-static-inactive': staticMenuDesktopInactive,
+                'layout-menu-static-active': staticMenuMobileActive}">
+
+    <app-topbar></app-topbar>
+    
+
+    <div class="layout-menu-container" [ngClass]="{'layout-menu-dark':darkMenu}" >
+        <p-scrollPanel #layoutMenuScroller [style]="{height: '100%' }">
+            <div class="menu-scroll-content">
+                <!-- <inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></inline-profile> -->
+                <app-menu ></app-menu>
+            </div>
+        </p-scrollPanel>
+    </div>
+
+    <div class="layout-main">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="layout-mask"></div>
+
+    <app-footer></app-footer>
+
+
+</div>
