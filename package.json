@@ -1,6 +1,23 @@
 {
-  "name": "cin",
+  "name": "angular",
   "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^7.0.3",
+    "@angular/common": "^7.0.3",
+    "@angular/compiler": "^7.0.3",
+    "@angular/core": "^7.0.3",
+    "@angular/forms": "^7.0.3",
+    "@angular/platform-browser": "^7.0.3",
+    "@angular/platform-browser-dynamic": "^7.0.3",
+    "@angular/router": "^7.0.3",
+    "core-js": "^2.5.7",
+    "font-awesome": "^4.7.0",
+    "primeicons": "^1.0.0",
+    "primeng": "^6.1.5",
+    "rxjs": "^6.3.3",
+    "zone.js": "^0.8.26"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,27 +26,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "~7.0.0",
-    "@angular/common": "~7.0.0",
-    "@angular/compiler": "~7.0.0",
-    "@angular/core": "~7.0.0",
-    "@angular/forms": "~7.0.0",
-    "@angular/http": "~7.0.0",
-    "@angular/platform-browser": "~7.0.0",
-    "@angular/platform-browser-dynamic": "~7.0.0",
-    "@angular/router": "~7.0.0",
-    "core-js": "^2.5.4",
-    "font-awesome": "^4.7.0",
-    "primeicons": "^1.0.0",
-    "primeng": "^6.1.6",
-    "rxjs": "~6.3.3",
-    "zone.js": "~0.8.26"
-  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
-    "@angular/cli": "~7.0.5",
+    "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/node": "~8.9.4",
@@ -46,6 +45,6 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.1"
   }
 }
