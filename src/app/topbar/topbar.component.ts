@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild, ElementRef,AfterViewInit,Renderer2,HostListener} from '@angular/core';
+import { Component, OnInit ,ViewChild,EventEmitter,Output, ElementRef,Renderer2,HostBinding,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-topbar',
@@ -6,15 +6,21 @@ import { Component, OnInit ,ViewChild, ElementRef,AfterViewInit,Renderer2,HostLi
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-  @ViewChild('dl') elName : ElementRef;
-  constructor(private renderer: Renderer2) { }
-
+  // @ViewChild('dl') elName : ElementRef;
+  @HostBinding('class') role ; 
+  @Output() toggleMenubar : EventEmitter<any> = new EventEmitter()
+  constructor(private renderer: Renderer2,private elName : ElementRef ) { }
+  toggled :boolean = true;
+  active :boolean;
   ngOnInit() {
-    console.log(this.renderer)
-  }
-  toggleactive(){
-    console.log('hi')
-    // this.elName.nativeElement.query
+    
   }
 
+  togglemenu(){
+      this.toggled = !this.toggled
+      this.toggleMenubar.emit(); 
+  }
+  @HostListener('click') onClick() { 
+     console.log('hi')
+    }
 }

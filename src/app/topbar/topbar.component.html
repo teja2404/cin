@@ -1,18 +1,18 @@
 <div class="topbar clearfix">
   <div class="topbar-left"><img class="topbar-logo" src="assets/layout/images/logo.png"></div>
-  <div class="topbar-right"><a href="#" id="menu-button" class=""><i class="fa fa-angle-left"></i></a><a href="#" id="topbar-menu-button"><i
+  <div class="topbar-right"><a href="#" id="menu-button" [ngClass]="{'menu-button-rotate':toggled}" (click)="togglemenu()"><i class="fa fa-angle-left"></i></a><a href="#" id="topbar-menu-button"><i
         class="fa fa-bars"></i></a>
-    <ul class="topbar-items fadeInDown" #dl (click)="toggleactive()">
+    <ul class="topbar-items fadeInDown" #dl >
       <li class="profile-item ng-star-inserted"><a href="#"><img class="profile-image" src="assets/layout/images/avatar.png"><span
             class="topbar-item-name">Isabel Lopez</span><span class="topbar-item-role">Marketing</span></a>
         <ul class="layout-menu fadeInDown">
-          <li role="menuitem"><a href="#"><i class="fa fa-fw fa-user"></i><span>Profile</span></a></li>
-          <li role="menuitem"><a href="#"><i class="fa fa-fw fa-user-secret"></i><span>Privacy</span></a></li>
-          <li role="menuitem"><a href="#"><i class="fa fa-fw fa-cog"></i><span>Settings</span></a></li>
-          <li role="menuitem"><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
+          <li role="menuitem" ><a href="#"><i class="fa fa-fw fa-user"></i><span>Profile</span></a></li>
+          <li role="menuitem" ><a href="#"><i class="fa fa-fw fa-user-secret"></i><span>Privacy</span></a></li>
+          <li role="menuitem" (click)="toggleactive(activeMenu)" [ngClass]="{'active-top-menu': active}"><a href="#"><i class="fa fa-fw fa-cog"></i><span>Settings</span></a></li>
+          <li role="menuitem" (click)="toggleactive(activeMenu)" [ngClass]="{'active-top-menu': active}"><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
         </ul>
       </li>
-      <li><a href="#"><i class="topbar-icon fa fa-fw fa-cog"></i><span class="topbar-item-name">Settings</span></a>
+      <li><a href="#" ><i class="topbar-icon fa fa-fw fa-cog"></i><span class="topbar-item-name">Settings</span></a>
         <ul class="layout-menu fadeInDown">
           <li role="menuitem"><a href="#"><i class="fa fa-fw fa-paint-brush"></i><span>Change Theme</span></a></li>
           <li role="menuitem"><a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favorites</span></a></li>
@@ -20,7 +20,7 @@
           <li role="menuitem"><a href="#"><i class="fa fa-fw fa-picture-o"></i><span>Wallpaper</span></a></li>
         </ul>
       </li>
-      <li><a href="#"><i class="topbar-icon animated swing fa fa-fw fa-envelope-o"></i><span class="topbar-badge animated rubberBand">5</span><span
+      <li><a href="#" ><i class="topbar-icon animated swing fa fa-fw fa-envelope-o"></i><span class="topbar-badge animated rubberBand">5</span><span
             class="topbar-item-name">Messages</span></a>
         <ul class="layout-menu fadeInDown">
           <li role="menuitem"><a class="topbar-message" href="#"><img src="assets/layout/images/avatar1.png" width="35"><span>Give
