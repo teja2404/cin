@@ -1,4 +1,4 @@
-import {Component,Input,OnInit,EventEmitter,ViewChild} from '@angular/core';
+import {Component,Input,OnInit,EventEmitter, ViewChild, ElementRef,HostListener} from '@angular/core';
 import {trigger,state,style,transition,animate} from '@angular/animations';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
@@ -14,10 +14,11 @@ import {AppComponent} from '../app.component';
 export class MenuComponent implements OnInit {
 
   @Input() reset: boolean;
+//   @ViewChild('ripplelink') imput: ElementRef;
 
     model: any[];
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppComponent, private imput: ElementRef) {}
 
     ngOnInit() {
         this.model = [
@@ -165,5 +166,13 @@ export class MenuComponent implements OnInit {
             {label: 'Utils', icon: 'fa fa-fw fa-wrench', routerLink: ['/utils']},
             {label: 'Documentation', icon: 'fa fa-fw fa-book', routerLink: ['/documentation']}
         ];
+
+        console.log(this.imput)
+
     }
+        
+        @HostListener('click') 
+        performTask() {
+            console.log()
+        }    
 }

@@ -9,18 +9,26 @@ export class TopbarComponent implements OnInit {
   // @ViewChild('dl') elName : ElementRef;
   @HostBinding('class') role ; 
   @Output() toggleMenubar : EventEmitter<any> = new EventEmitter()
+  @Output() toggleshowhambergmenu : EventEmitter<any> = new EventEmitter()
   constructor(private renderer: Renderer2,private elName : ElementRef ) { }
   toggled :boolean = true;
-  active :boolean;
+  topbarItemsVisible :boolean = false;
+  active :boolean = false;
   ngOnInit() {
     
   }
 
   togglemenu(){
       this.toggled = !this.toggled
+      this.topbarItemsVisible = false
       this.toggleMenubar.emit(); 
   }
-  @HostListener('click') onClick() { 
-     console.log('hi')
-    }
+  toggleactive(){
+    this.active = !this.active
+  }
+
+  showhambergmenu(){
+    this.toggleshowhambergmenu.emit()
+    this.topbarItemsVisible = !this.topbarItemsVisible
+  }
 }

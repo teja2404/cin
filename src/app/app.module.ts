@@ -10,6 +10,9 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import {MenuItem} from 'primeng/api';                 //api
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import { Menu1Component } from './menu1/menu1.component';
+import { Menu2Component } from './menu2/menu2.component';
+import { Menu3Component } from './menu3/menu3.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     TopbarComponent,
     FooterComponent,
     MenuComponent,
+    Menu1Component,
+    Menu2Component,
+    Menu3Component,
     
   ],
   imports: [

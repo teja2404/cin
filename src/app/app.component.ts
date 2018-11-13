@@ -32,6 +32,10 @@ export class AppComponent {
       this.menuActive = !this.menuActive;
       event.preventDefault();
   }
+  menuToggleResponse(){
+    this.staticMenuDesktopInactive = false
+  }
+
 
   closeNotification(event) {
     this.notification = false;

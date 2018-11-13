@@ -3,9 +3,9 @@
                 'menu-layout-overlay': isOverlay(),
                 'layout-menu-overlay-active': overlayMenuActive,
                 'layout-menu-static-inactive': staticMenuDesktopInactive,
-                'layout-menu-static-active': staticMenuMobileActive}">
+                'layout-menu-static-active': staticMenuDesktopInactive}">
 
-    <app-topbar (toggleMenubar)="menuToggle()"></app-topbar>
+    <app-topbar (toggleMenubar)="menuToggle()" (toggleshowhambergmenu)="menuToggleResponse()"></app-topbar>
     
 
     <div class="layout-menu-container" [ngClass]="{'layout-menu-dark':darkMenu}" >
@@ -17,17 +17,17 @@
     </div>
 
     <div class="layout-main">
-        <div class="ui-g">
-            <div class="ui-g-12">
+        <div class="ui-g" style="height: calc(100%);">
+            <div class="ui-g-12" style="height: calc(100%+18px);">
 
+                <router-outlet></router-outlet>
             </div>
         </div>
-        <router-outlet></router-outlet>
     </div>
 
     <div class="layout-mask"></div>
 
-    <app-footer></app-footer>
+    <app-footer ></app-footer>
 
 
 </div>
